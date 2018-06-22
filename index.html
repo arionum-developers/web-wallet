@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" >
+   <head>
+      <meta charset="UTF-8">
+      <title>Arionum Web Wallet</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	  </head>
+   <body>
+      <div id="login-frame" class="hidden">
+         <iframe src="pages/login" frameborder="0" style="overflow: hidden"></iframe>
+      </div>
+      <div id="signup-frame" class="hidden">
+         <iframe  src="pages/signup" frameborder="0" style="overflow: hidden"></iframe>
+      </div>
+      <section class="hero">
+         <nav>
+            <div class="col-nav logo-container-nav"><a href="#" class="logo-icon-nav"></a></div>
+            <div class="col-nav menu-container-nav">
+               <ul class="menu-content-nav text-nav">
+                  <li class="open-menu-personal"><a href="#" class="selected-personal">Personal</a></li>
+                  <li class="open-menu-business"><a href="#" class="selected-business">Business</a></li>
+                  <li id="dashboard_btn"><a href="#">Dashboard</a></li>
+               </ul>
+            </div>
+            <div class="col-nav buttons-container-nav">
+               <div class="buttons-content-nav text-btn-nav">
+                  <a href="#" id="login">Log In</a>
+                  <a href="#" id="signup">Sign Up</a>
+               </div>
+            </div>
+         </nav>
+         <div class="sub-menu personal">
+            <ul class="sub-menu-list">
+               <li><a href="#">Getting Started <span>How to use Arionum Web Wallet</span></a></li>
+               <li><a href="#">Trading <span>How to trade Arionum</span></a></li>
+               <li><a href="#">Payments <span>Speed your payment time up</span></a></li>
+               <li><a href="#">Check Out Securely Online <span>Use Arionum to pay secure</span></a></li>
+               <li><a href="#">Mobile Wallet <span>Take a look at the Mobile Wallet</span></a></li>
+               <li><a href="#">Exchanges <span>Current Exchanges and Informations</span></a></li>
+            </ul>
+            <a href="#" class="close-menu-personal">
+            <span></span>
+            <span></span>
+            </a>
+         </div>
+         <div class="sub-menu business">
+            <ul class="sub-menu-list">
+               <li><a href="#">Business Web API's <span>Merchant services, invoicing and products</span></a></li>
+               <li><a href="#">Add Arionum to your Checkout <span>Add the code and accept crypto online</span></a></li>
+               <li><a href="#">Anonymous and simple <span>Get paid in your webstore with Arionum</span></a></li>
+            </ul>
+            <a href="#" class="close-menu-business">
+            <span></span>
+            <span></span>
+            </a>
+         </div>
+         <div class="hero-heading">
+		 <div id="warning-message" class="alert alert-danger" role="alert" >
+				This is a BETA version of the web wallet!
+			</div>
+            <h1>Discover the magic of the Arionum Web Wallet.</h1>
+            <a href="#" id="signup2" class="btn-blue">Sign Up for Free</a>
+            <a href="#" id="login2" class="btn-clear">Already have an Account? Log in</a>
+         </div>
+      </section>
+      <section class="footer-section"style="text-align:center;">
+         <h6>Developed by Cuby & AroDev | Released under the MIT license | Absolutely no warranties</h6>
+      </section>
+      <script src="http://code.jquery.com/jquery-latest.min.js"
+         type="text/javascript"></script>
+      <script src='./dashboard/js/aro.js'></script>
+      <script>var aro = new aro;</script>
+      <script  src="js/index.js"></script>
+   </body>
+</html>
