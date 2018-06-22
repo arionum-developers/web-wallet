@@ -1,246 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <!-- SETTING UP VIEWPORT FOR ARIONUM-->
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>Arionum Wallet - Send & Receive</title>
-      <!--ALL CSS FILE //TODO REMOVE NOT NEEDED-->
-      <link href="css/font-face.css" rel="stylesheet" media="all">
-      <link href="modules/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-      <link href="modules/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-      <link href="modules/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-      <link href="modules/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
-      <link href="modules/animsition/animsition.min.css" rel="stylesheet" media="all">
-      <link href="modules/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-      <link href="css/theme-min.css" rel="stylesheet" media="all">
-   </head>
-   <!-- START BODY WITH ANIMSITION EFFECT -->
-   <body class="animsition">
-      <!--MOBILE HEADER-->
-      <header class="header-mobile d-block d-lg-none">
-         <div class="header-mobile__bar">
-            <div class="container-fluid">
-               <div class="header-mobile-inner">
-                  <a class="logo" href="index.html">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- SETTING UP VIEWPORT FOR ARIONUM-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Arionum Wallet - Send & Receive</title>
+  <!--ALL CSS FILE //TODO REMOVE NOT NEEDED-->
+  <link href="css/font-face.css" rel="stylesheet" media="all">
+  <link href="modules/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+  <link href="modules/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+  <link href="modules/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+  <link href="modules/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+  <link href="modules/animsition/animsition.min.css" rel="stylesheet" media="all">
+  <link href="modules/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+  <link href="css/theme-min.css" rel="stylesheet" media="all">
+</head>
+<!-- START BODY WITH ANIMSITION EFFECT -->
+
+<body class="animsition">
+  <!--MOBILE HEADER-->
+  <header class="header-mobile d-block d-lg-none">
+    <div class="header-mobile__bar">
+      <div class="container-fluid">
+        <div class="header-mobile-inner">
+          <a class="logo" href="index.html">
                   <img src="../images/aro-web-color.svg" alt="Arionum Web" />
                   </a>
-                  <button class="hamburger hamburger--slider" type="button">
+          <button class="hamburger hamburger--slider" type="button">
                   <span class="hamburger-box">
                   <span class="hamburger-inner"></span>
                   </span>
                   </button>
-               </div>
-            </div>
-         </div>
-         <nav class="navbar-mobile">
-            <div class="container-fluid">
-               <ul class="navbar-mobile__list list-unstyled">
-                  <li>
-                     <a href="index.html">
+        </div>
+      </div>
+    </div>
+    <nav class="navbar-mobile">
+      <div class="container-fluid">
+        <ul class="navbar-mobile__list list-unstyled">
+          <li>
+            <a href="index.html">
                      <i class="fas fa-tachometer"style="width: 16px;"></i>Dashboard</a>
-                  </li>
-                  <li>
-                     <a href="transactions.html">
+          </li>
+          <li>
+            <a href="transactions.html">
                      <i class="fas fa-clock"></i>Transactions</a>
-                  </li>
-                  <li>
-                     <a href="send.html">
+          </li>
+          <li>
+            <a href="send.html">
                   <i class="fas fa-exchange"></i>Send & Receive</a>
-                  </li>
-                  <li>
-                     <a href="info.html">
+          </li>
+          <li>
+            <a href="info.html">
                     <i class="fas fa-info-circle"></i>Informations</a>
-                  </li>
-               </ul>
-            </div>
-         </nav>
-      </header>
-      <!-- END HEADER MOBILE-->
-      <!-- MENU SIDEBAR-->
-      <aside class="menu-sidebar d-none d-lg-block">
-         <div class="logo">
-            <a href="#">
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- END HEADER MOBILE-->
+  <!-- MENU SIDEBAR-->
+  <aside class="menu-sidebar d-none d-lg-block">
+    <div class="logo">
+      <a href="#">
             <img src="../images/aro-web-color.svg" alt="Arionum Web" />
             </a>
-         </div>
-         <div class="menu-sidebar__content js-scrollbar1">
-            <nav class="navbar-sidebar">
-               <ul class="list-unstyled navbar__list">
-                  <li>
-                     <a href="index.html">
+    </div>
+    <div class="menu-sidebar__content js-scrollbar1">
+      <nav class="navbar-sidebar">
+        <ul class="list-unstyled navbar__list">
+          <li>
+            <a href="index.html">
                      <i class="fas fa-tachometer"style="width: 16px;"></i>Dashboard</a>
-                  </li>
-                  <li>
-                     <a href="transactions.html">
+          </li>
+          <li>
+            <a href="transactions.html">
                      <i class="fas fa-clock"></i>Transactions</a>
-                  </li>
-                  <li>
-                     <a href="send.html">
+          </li>
+          <li>
+            <a href="send.html">
                   <i class="fas fa-exchange"></i>Send & Receive</a>
-                  </li>
-                  <li>
-                     <a href="info.html">
+          </li>
+          <li>
+            <a href="info.html">
                     <i class="fas fa-info-circle"></i>Informations</a>
-                  </li>
-               </ul>
-            </nav>
-			<div style="width:100%;text-align:center;position:absolute;bottom:0;font-size: 1.6em;">
-			  <a target="_blank" href="https://arionum.info/discord"><i class="fab fa-discord" id="clickablething"title="Arionum Discord"></i></a>
-			  <a target="_blank" href="https://bitcointalk.org/index.html?topic=2710248.0"><i class="fab fa-bitcoin" id="clickablething"title="Bitcointalk ANN"></i></a>
-			  <a target="_blank" href="https://arionum.info"><i class="fab fa-wpexplorer" id="clickablething"title="Arionum Blockexplorer"></i></a>
-			  <a target="_blank" href="https://www.arionum.com"><i class="fas fa-globe" id="clickablething"title="Arionum Homepage"></i></a>
-			  </div>
-         </div>
-      </aside>
-      <!-- END MENU SIDEBAR-->
-      <!-- PAGE CONTAINER-->
-      <div class="page-container">
-      <!-- HEADER DESKTOP-->
-      <header class="header-desktop">
-         <div class="section__content section__content--p30">
-            <div class="container-fluid">
-               <div class="header-wrap">
-                  <form class="form-header" action="" method="POST">
-                  </form>
-                  <div class="header-button">
-                     <div class="account-wrap">
-                        <div class="account-item clearfix js-item-menu">
-                           <div class="content">
-                              <a class="js-acc-btn" href="#">My Account</a>
-                           </div>
-                           <div class="account-dropdown js-dropdown">
-                              <div class="account-dropdown__footer">
-                                 <a href="#" id="logout-button">
-                                 <i class="zmdi zmdi-power"></i>Logout</a>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </header>
-      <!-- HEADER DESKTOP-->
-      <!-- START CONTENT-->
-      <div class="main-content">
+          </li>
+        </ul>
+      </nav>
+      <div style="width:100%;text-align:center;position:absolute;bottom:0;font-size: 1.6em;">
+        <a target="_blank" href="https://arionum.info/discord"><i class="fab fa-discord" id="clickablething"title="Arionum Discord"></i></a>
+        <a target="_blank" href="https://bitcointalk.org/index.html?topic=2710248.0"><i class="fab fa-bitcoin" id="clickablething"title="Bitcointalk ANN"></i></a>
+        <a target="_blank" href="https://arionum.info"><i class="fab fa-wpexplorer" id="clickablething"title="Arionum Blockexplorer"></i></a>
+        <a target="_blank" href="https://www.arionum.com"><i class="fas fa-globe" id="clickablething"title="Arionum Homepage"></i></a>
+      </div>
+    </div>
+  </aside>
+  <!-- END MENU SIDEBAR-->
+  <!-- PAGE CONTAINER-->
+  <div class="page-container">
+    <!-- HEADER DESKTOP-->
+    <header class="header-desktop">
       <div class="section__content section__content--p30">
-		 <!----START CONTEXT------>
-<div class="row">
-   <!----SEND FORM------>
-   <div class="col-lg-6" id="send-form-main">
-      <div class="card">
-         <div class="card-header">Send AROs</div>
-         <div class="card-body">
-            <div class="card-title">
-               <h3 class="text-center title-2">Send AROs to an specific Address</h3>
+        <div class="container-fluid">
+          <div class="header-wrap">
+            <form class="form-header" action="" method="POST">
+            </form>
+            <div class="header-button">
+              <div class="account-wrap">
+                <div class="account-item clearfix js-item-menu">
+                  <div class="content">
+                    <a class="js-acc-btn" href="#">My Account</a>
+                  </div>
+                  <div class="account-dropdown js-dropdown">
+                    <div class="account-dropdown__footer">
+                      <a href="#" id="logout-button">
+                                 <i class="zmdi zmdi-power"></i>Logout</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <hr>
-            <div id="master-send-div">
-               <div class="form-group">
-                  <label for="summary" class="control-label mb-1">Send amount</label>
-                  <input id="summary" name="summary" type="number" class="form-control" value="1.00">
-                  <span class="help-block field-validation-valid" id="maxvalue">Max: 1.00</span>
-               </div>
-               <div class="form-group has-success">
-                  <label for="address" class="control-label mb-1">Address To</label>
-                  <input id="address" name="address" type="text" class="form-control valid">
-               </div>
-               <div class="row">
-                  <div class="col-6">
-                     <div class="form-group">
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- HEADER DESKTOP-->
+    <!-- START CONTENT-->
+    <div class="main-content">
+      <div class="section__content section__content--p30">
+        <!----START CONTEXT------>
+        <div class="row">
+          <!----SEND FORM------>
+          <div class="col-lg-6" id="send-form-main">
+            <div class="card">
+              <div class="card-header">Send AROs</div>
+              <div class="card-body">
+                <div class="card-title">
+                  <h3 class="text-center title-2">Send AROs to an specific Address</h3>
+                </div>
+                <hr>
+                <div id="master-send-div">
+                  <div class="form-group">
+                    <label for="summary" class="control-label mb-1">Send amount</label>
+                    <input id="summary" name="summary" type="number" class="form-control" value="1.00">
+                    <span class="help-block field-validation-valid" id="maxvalue">Max: 1.00</span>
+                  </div>
+                  <div class="form-group has-success">
+                    <label for="address" class="control-label mb-1">Address To</label>
+                    <input id="address" name="address" type="text" class="form-control valid">
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="form-group">
                         <label for="message" class="control-label mb-1">Message</label>
                         <input id="message" name="message" type="tel" class="form-control" value="" placeholder="Message">
                         <span class="help-block"></span>
-                     </div>
-                  </div>
-                  <div class="col-6">
-                     <label for="fee" class="control-label mb-1">Fee</label>
-                     <div class="input-group">
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <label for="fee" class="control-label mb-1">Fee</label>
+                      <div class="input-group">
                         <input id="fee" name="fee" type="tel" class="form-control" value="0.00250000" disabled>
-                     </div>
+                      </div>
+                    </div>
                   </div>
-               </div>
-               <div>
-                  <button id="send-button" type="submit" class="btn btn-lg btn-block">
+                  <div>
+                    <button id="send-button" type="submit" class="btn btn-lg btn-block">
                   <i class="fa fa-lock fa-lg"></i>&nbsp;
                   <span id="payment-button-amount">Send 1.00</span>
-                  <span id="payment-button-sending" style="display:none;">Sending…</span>
+                  <span id="payment-button-sending" style="display:none;">Sendingï¿½</span>
                   </button>
-               </div>
+                  </div>
+                </div>
+              </div>
             </div>
-         </div>
-      </div>
-   </div>
-   <!----RECEIVE FORM------>
-   <div class="col-lg-6">
-      <div class="card">
-         <div class="card-header">
-            Generate an <strong>Request</strong> Code
-         </div>
-         <div class="card-body card-block">
-            <form action="" method="post" class="">
-               <div class="form-group">
-                  <label for="amount" class=" form-control-label">Request Amount</label>
-                  <input type="number" id="amount" name="amount" placeholder="Enter Amount.." class="form-control" value="1.00">
-                  <span class="help-block">Please enter your desired amount.</span>
-               </div>
-               <div class="form-group">
-                  <label for="message1" class=" form-control-label">Request Message</label>
-                  <input type="text" id="message1" name="message1" placeholder="Enter Message.." class="form-control">
-                  <span class="help-block">Please enter a message for your request</span>
-               </div>
-            </form>
-         </div>
-         <div class="card-footer">
-            <button type="submit" id="generate-button" class="btn btn-sm">
+          </div>
+          <!----RECEIVE FORM------>
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header">
+                Generate an <strong>Request</strong> Code
+              </div>
+              <div class="card-body card-block">
+                <form action="" method="post" class="">
+                  <div class="form-group">
+                    <label for="amount" class=" form-control-label">Request Amount</label>
+                    <input type="number" id="amount" name="amount" placeholder="Enter Amount.." class="form-control" value="1.00">
+                    <span class="help-block">Please enter your desired amount.</span>
+                  </div>
+                  <div class="form-group">
+                    <label for="message1" class=" form-control-label">Request Message</label>
+                    <input type="text" id="message1" name="message1" placeholder="Enter Message.." class="form-control">
+                    <span class="help-block">Please enter a message for your request</span>
+                  </div>
+                </form>
+              </div>
+              <div class="card-footer">
+                <button type="submit" id="generate-button" class="btn btn-sm">
             <i class="fa fa-dot-circle-o"></i> Generate
             </button>
-         </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-   </div>
-</div>
-</div>
-<div class="row">
-   <div class="col-md-12">
-      <div class="copyright">
-         <p>Developed by Cuby & AroDev | Released under the MIT license | Absolutely no warranties</p>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="copyright">
+            <p>Developed by Cuby & AroDev | Released under the MIT license | Absolutely no warranties</p>
+          </div>
+        </div>
       </div>
-   </div>
-</div>
-</div>
-</div>
-<!--END MAIN PAGE-->			
-<script src="modules/jquery-3.2.1.min.js"></script>
-<script src="modules/bootstrap-4.1/popper.min.js"></script>
-<script src="modules/bootstrap-4.1/bootstrap.min.js"></script>
-<script src="modules/animsition/animsition.min.js"></script>
-<script src="modules/chartjs/Chart.bundle.min.js"></script>
-<script src="js/animator_main.js"></script>
-<script src='./js/aro.js'></script>
-<script>var aro = new aro;</script>
-<script src="js/aro_api.js"></script>
+    </div>
+  </div>
+  <!--END MAIN PAGE-->
+  <script src="modules/jquery-3.2.1.min.js"></script>
+  <script src="modules/bootstrap-4.1/popper.min.js"></script>
+  <script src="modules/bootstrap-4.1/bootstrap.min.js"></script>
+  <script src="modules/animsition/animsition.min.js"></script>
+  <script src="modules/chartjs/Chart.bundle.min.js"></script>
+  <script src="js/animator_main.js"></script>
+  <script src='./js/aro.js'></script>
+  <script>
+    var aro = new aro;
+
+  </script>
+  <script src="js/aro_api.js"></script>
 </body>
-</html>   <!-- DIALOGUE POPUP -->
+
+</html>
+<!-- DIALOGUE POPUP -->
 <div class="modal fade" id="dialoguePopup" tabindex="-1" role="dialog" aria-labelledby="dialoguetitle" aria-hidden="true">
-   <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-         <div class="modal-header">
-            <!----ENTER TITLE------>
-            <h5 class="modal-title" id="dialoguetitle">Null</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!----ENTER TITLE------>
+        <h5 class="modal-title" id="dialoguetitle">Null</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
-         </div>
-         <div class="modal-body" id="modal-body">
-            <!---ENTER OBJECTS--->
-         </div>
-         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-         </div>
       </div>
-   </div>
+      <div class="modal-body" id="modal-body">
+        <!---ENTER OBJECTS--->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
 <!-- end DIALOGUE POPUP -->
 <script src="js/page_send.js"></script>

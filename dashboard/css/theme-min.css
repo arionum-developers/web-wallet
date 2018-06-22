@@ -205,6 +205,22 @@ a {
 	background-color: #576ff9
 }
 
+#generate-qr-button {
+	color: #fff;
+	background-color: #5880fa;
+	border-color: #5880fa
+}
+
+#generate-qr-button:hover {
+	color: #fff;
+	background-color: #577bf9;
+	border-color: #bbbaff
+}
+
+#generate-qr-button:focus {
+	background-color: #576ff9
+}
+
 .main-content {
 	padding-top: 116px;
 	min-height: 100vh
