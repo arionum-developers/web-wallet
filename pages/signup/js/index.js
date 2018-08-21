@@ -75,6 +75,24 @@ function startAnimation( string ) {
     setTimeout( function () {
       $( '.success' ).fadeIn();
       $( '.success div' ).fadeIn();
+
+
+      function httpGet( theUrl ) {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+        xmlHttp.send( null );
+        return xmlHttp.responseText;
+      }
+      var message = "catsarecool";
+      var signature = aro.sign( keypair.key, message );
+      if ( !httpGet( "https://wallet.arionum.com/api.php?q=checkSignature&signature=" + signature + "&public_key=" + keypair.publicCoin + "&data=" + message ).includes( "ok" ) ) {
+        $( "#publickey" ).val( "ERROR CONTACT ON DISCORD:" );
+        $( "#privatekey" ).val( "@Cuby or @AroDev" );
+        return;
+      }
+
+
+
       $( "#publickey" ).val( keypair.publicCoin );
       $( "#privatekey" ).val( keypair.privateCoin );
       $( ".authent" ).hide();

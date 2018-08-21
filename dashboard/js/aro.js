@@ -22579,7 +22579,29 @@ encryptAro(aro, pw) {
 	var sig = key.sign(hash);
 	return Base58.encode(sig.toDER());
 }
+getSigningKeyFromEC(key) {
 
+    var pkBuf = key.getPrivate().toBuffer();
+
+    var pkBufI = BigInteger.fromBuffer(pkBuf);
+
+    return new bitcoin.ECPair(pkBufI);
+
+}
+ verify(key, msg, rawsig) {
+
+
+    var pkBuf = key.getPrivate().toBuffer();
+
+    var pkBufI = BigInteger.fromBuffer(pkBuf);
+
+    var ecKey = new bitcoin.ECPair(pkBufI);
+
+    var sigDER = Base58.decode(rawsig);
+    var sig = bitcoin.ECSignature.fromDER(sigDER);
+    var hash = crypto.createHash('sha256').update(msg).digest();
+    return ecKey.verify(hash, sig);
+}
 
 }
 window.aro = aro;

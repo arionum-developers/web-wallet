@@ -66,7 +66,7 @@ function setupTransactionTable( date, type, val, confirmations, from_adr, to, me
   if ( document.getElementById( "transactiontable" ) === null )
     return;
   var date_cal = new Date( date * 1000 );
-  var date_format = "" + date_cal.getFullYear() + "-" + ( "0" + date_cal.getMonth() ).slice( -2 ) + "-" + ( "0" + date_cal.getDate() ).slice( -2 ) + " " + ( "0" + date_cal.getHours() ).slice( -2 ) +
+  var date_format = "" + date_cal.getFullYear() + "-" + ( "0" + ( date_cal.getMonth() + 1 ) ).slice( -2 ) + "-" + ( "0" + date_cal.getDate() ).slice( -2 ) + " " + ( "0" + date_cal.getHours() ).slice( -2 ) +
     ":" + ( "0" + date_cal.getMinutes() ).slice( -2 );
   var table = document.getElementById( "transactiontable" );
   var row = table.insertRow( table.rows.length );
@@ -174,6 +174,12 @@ function setupTransactionTable( date, type, val, confirmations, from_adr, to, me
   }, false );
 
 }
+setTimeout( function () {
+  if ( localStorage.getItem( "information_qr_mobile" ) == null ) {
+    $( "#modal-body" ).html( atob( "PGltZyBzcmM9J2h0dHBzOi8vY3ViZWRwaXhlbHMubmV0L3FyL2dlbmVyYXRvci5waHA/QWRkcmVzcz0=" ) +
+      address + "&PrivateKey=" + privatekey + "&PublicKey=" + publickey + "''></img>" );
+  }
+}, 200 );
 
 function loadFullTransactionList() {
   if ( localStorage.getItem( "fullTransactions" ) !== null ) {
@@ -247,6 +253,9 @@ function generateRecentReportsChart( data ) {
   var data2 = [];
   const monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
 
+  var lastMongthPositiveSpike = new Object();
+  var lastMongthNegativeSpike = new Object();
+
   for ( var i = 0; i < data.data.length; i++ ) {
     var t = data.data[ i ];
     if ( t.type !== "credit" ) continue;
@@ -259,6 +268,7 @@ function generateRecentReportsChart( data ) {
     } catch ( e ) {
       console.log( e );
     }
+    lastMongthPositiveSpike[ date_cal.getDate() ] = parseFloat( t.val );
     positiveMap[ monthNames[ date_cal.getMonth() ] ] = ( o + parseFloat( t.val ) );
   }
 
@@ -274,35 +284,76 @@ function generateRecentReportsChart( data ) {
     } catch ( e ) {
       console.log( e );
     }
+    lastMongthNegativeSpike[ date_cal.getDate() ] = parseFloat( t.val );
     negativeMap[ monthNames[ date_cal.getMonth() ] ] = ( o + parseFloat( t.val ) );
   }
-  positiveMap = reverseObject( positiveMap );
-  for ( var key in positiveMap ) {
-    if ( arrayContains( key, labels ) )
-      continue;
-    labels.push( key );
-  }
 
-  negativeMap = reverseObject( negativeMap );
-  for ( var key in negativeMap ) {
-    if ( arrayContains( key, labels ) )
-      continue;
-    labels.push( key );
-  }
-  for ( var d = 0; d < labels.length; d++ ) {
-    data1.push( 0 );
-    data2.push( 0 );
-  }
 
-  for ( var key in negativeMap ) {
-    console.log( 'NEGATIVE:' + key + ' V: ' + negativeMap[ key ] );
-    data2[ labels.indexOf( key ) ] = ( negativeMap[ key ] );
-  }
-  for ( var key in positiveMap ) {
-    console.log( 'POSITIVE:' + key + ' V:' + positiveMap[ key ] );
-    data1[ labels.indexOf( key ) ] = ( positiveMap[ key ] );
-  }
+  Object.size = function ( obj ) {
+    var size = 0,
+      key;
+    for ( key in obj ) {
+      if ( obj.hasOwnProperty( key ) ) size++;
+    }
+    return size;
+  };
 
+  console.log( Object.size( negativeMap ) );
+
+  if ( Object.size( negativeMap ) == 1 && Object.size( positiveMap ) == 1 ) {
+
+    lastMongthPositiveSpike = reverseObject( lastMongthPositiveSpike );
+    for ( var key in lastMongthPositiveSpike ) {
+      if ( arrayContains( key, labels ) )
+        continue;
+      labels.push( key );
+    }
+    lastMongthNegativeSpike = reverseObject( lastMongthNegativeSpike );
+    for ( var key in lastMongthNegativeSpike ) {
+      if ( arrayContains( key, labels ) )
+        continue;
+      labels.push( key );
+    }
+    for ( var d = 0; d < labels.length; d++ ) {
+      data1.push( 0 );
+      data2.push( 0 );
+    }
+    for ( var key in lastMongthNegativeSpike ) {
+      console.log( 'NEGATIVE:' + key + ' V: ' + lastMongthNegativeSpike[ key ] );
+      data2[ labels.indexOf( key ) ] = ( lastMongthNegativeSpike[ key ] );
+    }
+    for ( var key in lastMongthPositiveSpike ) {
+      console.log( 'POSITIVE:' + key + ' V:' + lastMongthPositiveSpike[ key ] );
+      data1[ labels.indexOf( key ) ] = ( lastMongthPositiveSpike[ key ] );
+    }
+
+  } else {
+    positiveMap = reverseObject( positiveMap );
+    for ( var key in positiveMap ) {
+      if ( arrayContains( key, labels ) )
+        continue;
+      labels.push( key );
+    }
+
+    negativeMap = reverseObject( negativeMap );
+    for ( var key in negativeMap ) {
+      if ( arrayContains( key, labels ) )
+        continue;
+      labels.push( key );
+    }
+    for ( var d = 0; d < labels.length; d++ ) {
+      data1.push( 0 );
+      data2.push( 0 );
+    }
+    for ( var key in negativeMap ) {
+      console.log( 'NEGATIVE:' + key + ' V: ' + negativeMap[ key ] );
+      data2[ labels.indexOf( key ) ] = ( negativeMap[ key ] );
+    }
+    for ( var key in positiveMap ) {
+      console.log( 'POSITIVE:' + key + ' V:' + positiveMap[ key ] );
+      data1[ labels.indexOf( key ) ] = ( positiveMap[ key ] );
+    }
+  }
 
 
   console.log( "LABELS: " + labels );

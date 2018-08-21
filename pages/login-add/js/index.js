@@ -13,7 +13,7 @@ $( '#sumbit_text' ).click( function () {
   }
 } );
 $( "#close" ).click( function () {
-  window.top.location.href = "/";
+  window.top.location.href = "/dashboard";
 } );
 
 document.getElementById( 'login_fields' ).addEventListener( 'drop', handleDropEvent, false );
@@ -138,13 +138,18 @@ function startAnimation( string ) {
       if ( keypair !== null ) {
         localStorage.setItem( 'rki_l_pr', keypair.privateCoin );
         localStorage.setItem( 'rki_l_pb', keypair.publicCoin );
+
+        var address = "";
+        address = aro.getAddress( publickey );
+        var privatek = keypair.privateCoin;
+        var publick = keypair.publicCoin;
+
+        addAccount( address + ":" + publick + ":" + privatek );
         $( '.success' ).fadeIn();
         setTimeout( function () {
           window.top.location.href = "/dashboard/";
         }, 1000 );
       } else {
-        localStorage.setItem( 'rki_l_pr', "" );
-        localStorage.setItem( 'rki_l_pb', "" );
         $( '.error' ).fadeIn();
         setTimeout( function () {
           location.reload();

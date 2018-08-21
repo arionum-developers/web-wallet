@@ -14,7 +14,7 @@
   <link href="modules/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
   <link href="modules/animsition/animsition.min.css" rel="stylesheet" media="all">
   <link href="modules/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-  <link href="css/theme-min.css" rel="stylesheet" media="all">
+  <link href="css/theme-min.css?c=1" rel="stylesheet" media="all">
 </head>
 <!-- START BODY WITH ANIMSITION EFFECT -->
 
@@ -52,7 +52,7 @@
           </li>
           <li>
             <a href="info.html">
-                    <i class="fas fa-info-circle"></i>Informations</a>
+                    <i class="fas fa-info-circle"></i>Information</a>
           </li>
         </ul>
       </div>
@@ -83,7 +83,7 @@
           </li>
           <li>
             <a href="info.html">
-                    <i class="fas fa-info-circle"></i>Informations</a>
+                    <i class="fas fa-info-circle"></i>Information</a>
           </li>
         </ul>
       </nav>
@@ -128,15 +128,15 @@
     <!-- START CONTENT-->
     <div class="main-content">
       <div class="section__content section__content--p30">
-        <!----START CONTEXT------>
+        <!--START CONTEXT------>
         <div class="row">
-          <!----SEND FORM------>
+          <!--SEND FORM------>
           <div class="col-lg-6" id="send-form-main">
             <div class="card">
               <div class="card-header">Send AROs</div>
               <div class="card-body">
                 <div class="card-title">
-                  <h3 class="text-center title-2">Send AROs to an specific Address</h3>
+                  <h3 class="text-center title-2">Send AROs to an specific Address/Alias</h3>
                 </div>
                 <hr>
                 <div id="master-send-div">
@@ -146,8 +146,8 @@
                     <span class="help-block field-validation-valid" id="maxvalue">Max: 1.00</span>
                   </div>
                   <div class="form-group has-success">
-                    <label for="address" class="control-label mb-1">Address To</label>
-                    <input id="address" name="address" type="text" class="form-control valid">
+                    <label for="address" class="control-label mb-1">Address/Alias To</label>
+                    <input id="address" name="address" type="text" placeholder="Address/Alias" class="form-control valid">
                   </div>
                   <div class="row">
                     <div class="col-6">
@@ -168,32 +168,44 @@
                     <button id="send-button" type="submit" class="btn btn-lg btn-block">
                   <i class="fa fa-lock fa-lg"></i>&nbsp;
                   <span id="payment-button-amount">Send 1.00</span>
-                  <span id="payment-button-sending" style="display:none;">Sending�</span>
+                  <span id="payment-button-sending" style="display:none;">Sending...</span>
                   </button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <!----RECEIVE FORM------>
+          <!--RECEIVE FORM------>
           <div class="col-lg-6">
             <div class="card">
               <div class="card-header">
-                Generate an <strong>Request</strong> Code
+                Your Address / Alias <strong>and</strong> Request Code
               </div>
               <div class="card-body card-block">
-                <form action="" method="post" class="">
-                  <div class="form-group">
-                    <label for="amount" class=" form-control-label">Request Amount</label>
-                    <input type="number" id="amount" name="amount" placeholder="Enter Amount.." class="form-control" value="1.00">
-                    <span class="help-block">Please enter your desired amount.</span>
-                  </div>
-                  <div class="form-group">
-                    <label for="message1" class=" form-control-label">Request Message</label>
-                    <input type="text" id="message1" name="message1" placeholder="Enter Message.." class="form-control">
-                    <span class="help-block">Please enter a message for your request</span>
-                  </div>
-                </form>
+                <div class="form-group">
+                  <label for="ownaddress" class=" form-control-label">Your Address:</label>
+                  <button type="submit" id="copy-button" class="btn btn-sm">
+                    <i class="fa fa-dot-circle-o"></i> Copy Address
+                  </button>
+                  <input type="text" id="own_address" name="ownaddress" placeholder="Address" class="form-control" value="not found" readonly="readonly">
+                </div>
+                <div class="form-group">
+                  <label for="alias" class=" form-control-label">Your Alias:</label>
+                  <button type="submit" id="create-alias-button" class="btn btn-sm">
+                    <i class="fa fa-dot-circle-o"></i> Create Alias
+                  </button>
+                  <input type="text" id="own_alias" name="alias" placeholder="Alias" class="form-control" value="not set" readonly="readonly">
+                </div>
+                <div class="form-group">
+                  <label for="amount" class=" form-control-label">Request Amount</label>
+                  <input type="number" id="amount" name="amount" placeholder="Enter Amount.." class="form-control" value="1.00">
+                  <span class="help-block">Please enter your desired amount.</span>
+                </div>
+                <div class="form-group">
+                  <label for="message1" class=" form-control-label">Request Message</label>
+                  <input type="text" id="message1" name="message1" placeholder="Enter Message.." class="form-control">
+                  <span class="help-block">Please enter a message for your request</span>
+                </div>
               </div>
               <div class="card-footer">
                 <button type="submit" id="generate-button" class="btn btn-sm">
@@ -219,13 +231,14 @@
   <script src="modules/bootstrap-4.1/bootstrap.min.js"></script>
   <script src="modules/animsition/animsition.min.js"></script>
   <script src="modules/chartjs/Chart.bundle.min.js"></script>
+  <script src="modules/jdenticon-2.1.0.min.js"></script>
   <script src="js/animator_main.js"></script>
   <script src='./js/aro.js'></script>
   <script>
     var aro = new aro;
 
   </script>
-  <script src="js/aro_api.js"></script>
+  <script src="js/aro_api.js?s=1"></script>
 </body>
 
 </html>
@@ -250,4 +263,4 @@
   </div>
 </div>
 <!-- end DIALOGUE POPUP -->
-<script src="js/page_send.js"></script>
+<script src="js/page_send.js?update=3"></script>

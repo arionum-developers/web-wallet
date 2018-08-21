@@ -14,11 +14,12 @@
   <link href="modules/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
   <link href="modules/animsition/animsition.min.css" rel="stylesheet" media="all">
   <link href="modules/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-  <link href="css/theme-min.css" rel="stylesheet" media="all">
+  <link href="css/theme-min.css?u=2" rel="stylesheet" media="all">
 </head>
 <!-- START BODY WITH ANIMSITION EFFECT -->
 
 <body class="animsition">
+
   <!--MOBILE HEADER-->
   <header class="header-mobile d-block d-lg-none">
     <div class="header-mobile__bar">
@@ -52,7 +53,7 @@
           </li>
           <li>
             <a href="info.html">
-                    <i class="fas fa-info-circle"></i>Informations</a>
+                    <i class="fas fa-info-circle"></i>Information</a>
           </li>
         </ul>
       </div>
@@ -83,7 +84,7 @@
           </li>
           <li>
             <a href="info.html">
-                    <i class="fas fa-info-circle"></i>Informations</a>
+                    <i class="fas fa-info-circle"></i>Information</a>
           </li>
         </ul>
       </nav>
@@ -98,6 +99,7 @@
   <!-- END MENU SIDEBAR-->
   <!-- PAGE CONTAINER-->
   <div class="page-container">
+
     <!-- HEADER DESKTOP-->
     <header class="header-desktop">
       <div class="section__content section__content--p30">
@@ -131,6 +133,8 @@
         <div id="warning-message" class="alert alert-danger" role="alert" style="display:none;">
           Your transactions are being loaded at the moment! Downloading... Please don't leave this page
         </div>
+
+
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12">
@@ -144,7 +148,7 @@
               <div class="overview__inner">
                 <div class="overview-box clearfix">
                   <div class="icon">
-                    <i class="zmdi zmdi-money"></i>
+                    <img src="images/only_logo.svg" style="height:2.5em;"></img>
                   </div>
                   <div class="text">
                     <h2 id="balance">0.000</h2>
@@ -223,13 +227,14 @@
   <script src="modules/bootstrap-4.1/bootstrap.min.js"></script>
   <script src="modules/animsition/animsition.min.js"></script>
   <script src="modules/chartjs/Chart.bundle.min.js"></script>
+  <script src="modules/jdenticon-2.1.0.min.js"></script>
   <script src="js/animator_main.js"></script>
   <script src='./js/aro.js'></script>
   <script>
     var aro = new aro;
 
   </script>
-  <script src="js/aro_api.js"></script>
+  <script src="js/aro_api.js?c=0"></script>
 </body>
 
 </html>
@@ -238,7 +243,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <!----ENTER TITLE------>
+        <!--ENTER TITLE------>
         <h5 class="modal-title" id="dialoguetitle">Null</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -254,4 +259,4 @@
   </div>
 </div>
 <!-- end DIALOGUE POPUP -->
-<script src="js/page_dashboard.js"></script>
+<script src="js/page_dashboard.js?c=5"></script>

@@ -3,61 +3,61 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Signup- Arionum</title>
+  <title>Login-Add - Arionum</title>
   <link rel='stylesheet prefetch' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
   <link href="../../dashboard/modules/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body id="login_fields">
   <div class='login'>
     <div class='login_title'>
-      <span id="title_text">Create a Wallet</span>
+      <span id="title_text">Add another account</span>
       <i class="fas fa-times-square" id="close" style="position:absolute; right:5px;top:5px; font-size: 1.6em;color: #5880FA;cursor: pointer;"></i>
     </div>
     <div class='login_fields'>
+      <div class='login_fields__user' id="public_key_top">
+        <div class='icon'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/user_icon_copy.png'>
+        </div>
+        <input placeholder='Public Key' type='text' id="public">
+        <div class='validation'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/tick.png'>
+        </div>
+        </input>
+      </div>
       <div class='login_fields__password'>
         <div class='icon'>
           <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/lock_icon_copy.png'>
         </div>
-        <input placeholder='Password' type='password' id="password">
+        <input placeholder='Private Key' type='text' id="private">
         <div class='validation'>
           <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/tick.png'>
         </div>
       </div>
       <div class='login_fields__submit'>
-        <input type='submit' id="sumbit_text" value='Create Wallet'>
+        <input type='submit' id="sumbit_text" value='Log In'>
       </div>
       <br><br>
+      <div class='login_fields__submit' id="top_file_selector">
+        <input type='submit' id="submit_file" value='Log In using the Key File'>
+        <input id='file_chooser' style="display:none;" type='file'>
+      </div>
     </div>
     <div class='success'>
-      <h2>Your Wallet has been created!</h2>
-      <p>The details are listed below:</p>
-      <div class='done_fields'>
-        <p>PublicKey:</p>
-        <div class='login_fields__password'>
-          <div class='icon'>
-            <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/lock_icon_copy.png'>
-          </div>
-          <input placeholder='PublicKey' type='text' id="publickey" readonly="readonly">
-        </div>
-        <p>PrivateKey:</p>
-        <div class='login_fields__password'>
-          <div class='icon'>
-            <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/lock_icon_copy.png'>
-          </div>
-          <input placeholder='PrivateKey' type='text' id="privatekey" readonly="readonly">
-        </div>
-        <div class='done_fields__submit'>
-          <input type='submit' id="gologin" value='Login now'>
-        </div>
-      </div>
+      <h2>Authentication Successful</h2>
+      <p>Redirecting...</p>
+    </div>
+    <div class='error'>
+      <h2>Authentication Error</h2>
+      <p>Please Retry...</p>
+      <p>Redirecting...</p>
     </div>
     <div class='disclaimer'></div>
   </div>
   <div class='authent'>
     <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/puff.svg'>
-    <p>Generating...</p>
+    <p>Authenticating...</p>
   </div>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
@@ -66,7 +66,8 @@
     var aro = new aro;
 
   </script>
-  <script src="js/index.js"></script>
+  <script src='../../dashboard/js/aro_api.js'></script>
+  <script src="js/index.js?c"></script>
 </body>
 
 </html>

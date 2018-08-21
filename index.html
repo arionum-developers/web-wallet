@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Arionum Web Wallet</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?c=5">
 
   <meta property="og:url" content="https://wallet.arionum.com/">
   <meta property="og:type" content="website">
@@ -17,7 +17,18 @@
 </head>
 
 <body>
-  <div id="login-frame" class="hidden">
+
+
+  <div class="placeholder" data-large="https://images.unsplash.com/photo-1506789658653-e5729a1ee31d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=df9993cd64418ab6085234de77617931&auto=format&fit=crop&w=2091&q=80" data-mobile="https://images.unsplash.com/photo-1506789658653-e5729a1ee31d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=df9993cd64418ab6085234de77617931&auto=format&fit=crop&w=2091&q=30"
+    style="position: absolute;top:0;left:0;min-width: 100%;
+height: auto;
+min-height: 100%;
+width: auto;">
+    <img src="https://images.unsplash.com/photo-1506789658653-e5729a1ee31d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=df9993cd64418ab6085234de77617931&auto=format&fit=crop&w=420&q=1" class="img-small">
+  </div>
+
+
+  <div id="login-frame" class="hidden" style="overflow:hidden;">
     <iframe src="pages/login" frameborder="0" style="overflow: hidden"></iframe>
   </div>
   <div id="signup-frame" class="hidden">
@@ -67,9 +78,7 @@
             </a>
     </div>
     <div class="hero-heading">
-      <div id="warning-message" class="alert alert-danger" role="alert">
-        This is a BETA version of the web wallet!
-      </div>
+
       <h1>Discover the magic of the Arionum Web Wallet.</h1>
       <a href="#" id="signup2" class="btn-blue">Sign Up for Free</a>
       <a href="#" id="login2" class="btn-clear">Already have an Account? Log in</a>
@@ -78,13 +87,19 @@
   <section class="footer-section" style="text-align:center;">
     <h6>Developed by Cuby & AroDev | Released under the MIT license | Absolutely no warranties</h6>
   </section>
-  <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-  <script src='./dashboard/js/aro.js'></script>
+  <script src="http://code.jquery.com/jquery-latest.min.js?c=1" type="text/javascript"></script>
+  <script src='./dashboard/js/aro.js?c=1'></script>
   <script>
     var aro = new aro;
 
   </script>
-  <script src="js/index.js"></script>
+  <script src="js/index.js?cloudflare=2"></script>
+  <script>
+    if (location.protocol != 'https:') {
+      location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+    }
+
+  </script>
 </body>
 
 </html>

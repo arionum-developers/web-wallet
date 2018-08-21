@@ -1,13 +1,7 @@
-$( "#logout-button" ).click( function () {
-  localStorage.setItem( 'rki_l_pr', "" );
-  localStorage.setItem( 'rki_l_pb', "" );
-  location.reload();
-} );
-
 ( function ( $ ) {
   var ctx = document.getElementById( "aro_balanace_chart" );
   if ( ctx ) {
-    ctx.height = 115;
+    document.getElementById( "aro_balanace_chart" ).height = 115;
     var myChart = new Chart( ctx, {
       type: 'bar',
       data: {
@@ -40,6 +34,10 @@ $( "#logout-button" ).click( function () {
         }
       }
     } );
+    myChart.aspectRatio = 0;
+    setTimeout( function () {
+      console.log( "SETTING CSS" );
+    }, 2000 );
   }
 } )( jQuery );
 

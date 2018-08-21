@@ -10,6 +10,34 @@ var closeMenuPersonal = document.querySelector( ".close-menu-personal" );
 //-> CHECK IF ALREADY LOGGED IN->
 checkLogin();
 
+
+//-> IMAGE LOADER
+window.onload = function () {
+  //CHECKIF MOBILE
+  var mobilecheck = window.matchMedia( "only screen and (max-width: 700px)" );
+  var is_mobile = mobilecheck.matches;
+  var placeholder = document.querySelector( '.placeholder' ),
+    small = placeholder.querySelector( '.img-small' )
+
+  var img = new Image();
+  img.src = small.src;
+  img.onload = function () {
+    small.classList.add( 'loaded' );
+  };
+
+  var imgLarge = new Image();
+  if ( is_mobile ) {
+    imgLarge.src = placeholder.dataset.mobile;
+  } else {
+    imgLarge.src = placeholder.dataset.large;
+  }
+  imgLarge.onload = function () {
+    imgLarge.classList.add( 'loaded' );
+  };
+  placeholder.appendChild( imgLarge );
+}
+
+
 function checkLogin() {
   if ( localStorage.getItem( "rki_l_pb" ) === null || localStorage.getItem( "rki_l_pr" ) === null ) {
     $( "#dashboard_btn" ).click( function () {
@@ -121,6 +149,7 @@ login2.onclick = openSignIn;
 function openSignIn() {
   $( "#signup-frame" ).hide();
   $( "#login-frame" ).hide();
+  $( "body" ).css( 'cssText', "overflow: hidden;" );
   loginframe.classList.remove( "hidden" );
   $( "#login-frame" ).fadeIn( "fast" );
 }
@@ -135,6 +164,7 @@ signup2.onclick = openSignUp;
 function openSignUp() {
   $( "#login-frame" ).hide();
   $( "#signup-frame" ).hide();
+  $( "body" ).css( 'cssText', "overflow: hidden;" );
   singupframe.classList.remove( "hidden" );
   $( "#signup-frame" ).fadeIn( "fast" );
 }

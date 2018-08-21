@@ -51,7 +51,7 @@ function downloadFullTransactions( download ) {
         if ( document.getElementById( "transactiontable" ) === null )
           return;
         var date_cal = new Date( date * 1000 );
-        var date_format = "" + date_cal.getFullYear() + "-" + ( "0" + date_cal.getMonth() ).slice( -2 ) + "-" + ( "0" + date_cal.getDate() ).slice( -2 ) + " " + ( "0" + date_cal.getHours() ).slice( -2 ) +
+        var date_format = "" + date_cal.getFullYear() + "-" + ( "0" + ( date_cal.getMonth() + 1 ) ).slice( -2 ) + "-" + ( "0" + date_cal.getDate() ).slice( -2 ) + " " + ( "0" + date_cal.getHours() ).slice( -2 ) +
           ":" + ( "0" + date_cal.getMinutes() ).slice( -2 );
         var table = document.getElementById( "transactiontable" );
         var row = table.insertRow( table.rows.length );

@@ -1,3 +1,5 @@
+$( "#own_address" ).val( address );
+$( "#own_alias" ).val( alias );
 $( '#summary' ).on( 'propertychange input', function ( e ) {
   var valueChanged = false;
 
@@ -14,6 +16,7 @@ $( '#summary' ).on( 'propertychange input', function ( e ) {
     $( '#fee' ).val( fee.toFixed( 8 ) );
     $( "#payment-button-amount" ).text( "Send " + cfloat.toFixed( 2 ) );
   }
+
 } );
 getArionumBalance( function ( data ) {
   updateMaxValue();
@@ -42,15 +45,25 @@ $( "#send-button" ).click( function () {
   var time = parseInt( timeStampInMs / 1000 );
   var fee = parseFloat( $( "#fee" ).val() ).toFixed( 8 );
   var key = aro.decodeKeypair( "arionum:" + privatekey + ":" + publickey );
-  var presignedmessage = amount + "-" + fee + "-" + address + "-" + message + "-1-" + publickey + "-" + time;
+  var version = address.length ? 2 : 1;
+
+  var presignedmessage = amount + "-" + fee + "-" + address + "-" + message + "-" + version + "-" + publickey + "-" + time;
   console.log( "PRESIGN: " + presignedmessage );
   $( "#modal-body" ).html( "<p>Signing Message....</p>" );
   var signature = aro.sign( key.key, presignedmessage );
   console.log( "SIGNATURE: " + signature );
 
+  console.log( "VERIFING: ........." );
+
+  // http://wallet.arionum.com/api.php?q=checkSignature&signature=asda&public_key=asdasdas&data=asdasdas
+
+
 
   $( "#modal-body" ).html( "<p>Sending Transaction....</p>" );
-  sendTransaction( address, amount, signature, publickey, 1, message, time, function ( data ) {
+
+
+
+  sendTransaction( address, amount, signature, publickey, version, message, time, function ( data ) {
     console.log( data );
     var status = data.status;
     if ( status == "ok" ) {
@@ -69,3 +82,18 @@ $( "#generate-button" ).click( function () {
   $( "#dialoguetitle" ).text( "QR Code" );
   $( "#modal-body" ).html( "<img src='https://cubedpixels.net/qr/generator.php?Value=" + $( "#amount" ).val() + "&Address=" + address + "&Message=" + $( "#message1" ).val() + "'></img>" );
 } );
+
+
+$( "#copy-button" ).click( function () {
+  $( "#own_address" ).val( $( "#own_address" ).val() ).select();
+  document.execCommand( "copy" );
+} );
+
+$( "#create-alias-button" ).click( function () {
+  //TODO -> CREATE ALIAS dialoguePopup
+
+} );
+
+
+
+//
