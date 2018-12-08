@@ -85,6 +85,7 @@ $("#generate-button").click(function() {
     $("#dialoguePopup").modal();
     $("#dialoguetitle").text("QR Code");
     $("#modal-body").html("<img src='https://cubedpixels.net/qr/generator.php?Value=" + $("#amount").val() + "&Address=" + address + "&Message=" + $("#message1").val() + "'></img>");
+    new QRCode(document.getElementById("modal-body"), "arosend|"+ $("#amount").val()+"|"+address+ "|"+$("#message1").val());
 });
 
 
