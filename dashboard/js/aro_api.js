@@ -31,7 +31,6 @@ else
   getAlias();
 
 var peer = "https://wallet.arionum.com";
-var corsbypass = "http://cubedpixels.net:9080/";
 
 function getJSONP( url, success ) {
   setTimeout( function () {
