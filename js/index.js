@@ -16,14 +16,9 @@ window.onload = function () {
   //CHECKIF MOBILE
   var mobilecheck = window.matchMedia( "only screen and (max-width: 700px)" );
   var is_mobile = mobilecheck.matches;
-  var placeholder = document.querySelector( '.placeholder' ),
-    small = placeholder.querySelector( '.img-small' )
+  var placeholder = document.querySelector( '.placeholder' );
 
   var img = new Image();
-  img.src = small.src;
-  img.onload = function () {
-    small.classList.add( 'loaded' );
-  };
 
   var imgLarge = new Image();
   if ( is_mobile ) {

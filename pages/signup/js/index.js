@@ -85,9 +85,10 @@ function startAnimation( string ) {
       }
       var message = "catsarecool";
       var signature = aro.sign( keypair.key, message );
-      if ( !httpGet( "https://wallet.arionum.com/api.php?q=checkSignature&signature=" + signature + "&public_key=" + keypair.publicCoin + "&data=" + message ).includes( "ok" ) ) {
+      if ( httpGet( "https://wallet.arionum.com/api.php?q=checkSignature&signature=" + signature + "&public_key=" + keypair.publicCoin + "&data=" + message ).includes( "false" ) ) {
         $( "#publickey" ).val( "ERROR CONTACT ON DISCORD:" );
         $( "#privatekey" ).val( "@Cuby or @AroDev" );
+        alert( "ERROR WHEN GENERATING" );
         return;
       }
 

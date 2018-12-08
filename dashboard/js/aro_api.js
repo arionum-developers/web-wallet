@@ -167,10 +167,10 @@ function loginWithAccount( number ) {
   saveAccounts( accounts );
 
   //TODO -> CLEAR STORAGE
-  localStorage.removeItem( "fullTransactions" );
-  localStorage.removeItem( "lastTransactions" );
-  localStorage.removeItem( "lastBalance" );
-  localStorage.removeItem( "lastAlias" );
+  localStorage.setItem( "fullTransactions", "" );
+  localStorage.setItem( "lastTransactions", "" );
+  localStorage.setItem( "lastBalance", "" );
+  localStorage.setItem( "lastAlias", "" );
 
 
   //TODO -> LOGIN

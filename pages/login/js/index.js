@@ -112,6 +112,49 @@ function startAnimation( string ) {
 
     }
 
+    var message = "catsarecool";
+
+    function httpGet( theUrl ) {
+      var xmlHttp = new XMLHttpRequest();
+      xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+      xmlHttp.send( null );
+      return xmlHttp.responseText;
+    }
+    if ( keypair != null && $( "#privatekey" ).val() != "" ) {
+      var signature = aro.sign( keypair.key, message );
+      if ( httpGet( "https://wallet.arionum.com/api.php?q=checkSignature&signature=" + signature + "&public_key=" + keypair.publicCoin + "&data=" + message ).includes( "false" ) ) {
+        $( "#publickey" ).val( "ERROR CONTACT ON DISCORD:" );
+        $( "#privatekey" ).val( "@Cuby or @AroDev" );
+        $( ".authent" ).show().animate( {
+          right: 90
+        }, {
+          easing: 'easeOutQuint',
+          duration: 600,
+          queue: false
+        } );
+        $( ".authent" ).animate( {
+          opacity: 0
+        }, {
+          duration: 200,
+          queue: false
+        } ).addClass( 'visible' );
+        $( '.login' ).removeClass( 'testtwo' )
+
+        setTimeout( function () {
+          $( '.login' ).removeClass( 'test' )
+          $( '.login div' ).fadeOut( 123 );
+        }, 100 );
+        alert( "Your specified keypair doesnt match and you can't do any transactions!" );
+        localStorage.setItem( 'rki_l_pr', "" );
+        localStorage.setItem( 'rki_l_pb', "" );
+        $( '.error' ).fadeIn();
+        setTimeout( function () {
+          location.reload();
+        }, 1500 );
+        return;
+      }
+    }
+
 
     $( ".authent" ).show().animate( {
       right: 90

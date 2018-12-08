@@ -15,7 +15,7 @@
 /**  SCROLL STYLE 2 */
 
 ::-webkit-scrollbar-thumb {
-  background-color: #5880FA;
+  background-color: #3e45fe;
 }
 
 ::-webkit-scrollbar-track {
@@ -51,12 +51,12 @@ html {
 
 
 ::selection {
-  background: #5880fa;
+  background: #3e45fe;
   color: #fff
 }
 
 ::-moz-selection {
-  background: #5880fa;
+  background: #3e45fe;
   color: #fff
 }
 
@@ -210,8 +210,8 @@ a {
 
 #send-button {
   color: #fff;
-  background-color: #5880fa;
-  border-color: #5880fa
+  background-color: #3d5afe;
+  border-color: #3d5afe
 }
 
 #send-button:hover {
@@ -226,24 +226,24 @@ a {
 
 #generate-button {
   color: #fff;
-  background-color: #5880fa;
-  border-color: #5880fa
+  background-color: #3d5afe;
+  border-color: #3d5afe;
 }
 
 #generate-button:hover {
   color: #fff;
   background-color: #577bf9;
-  border-color: #bbbaff
+  border-color: #bbbaff;
 }
 
 #generate-button:focus {
-  background-color: #576ff9
+  background-color: #576ff9;
 }
 
 #generate-qr-button {
   color: #fff;
-  background-color: #5880fa;
-  border-color: #5880fa
+  background-color: #3d5afe;
+  border-color: #3d5afe;
 }
 
 #generate-qr-button:hover {
@@ -259,8 +259,8 @@ a {
 
 #copy-button {
   color: #fff;
-  background-color: #5880fa;
-  border-color: #5880fa;
+  background-color: #3d5afe;
+  border-color: #3d5afe;
   right: 0;
   float: right;
 }
@@ -771,9 +771,9 @@ a {
 }
 
 .overview-item--c4 {
-  background-image: -moz-linear-gradient(90deg, #5880fa 0, #313cc4 100%);
-  background-image: -webkit-linear-gradient(90deg, #5880fa 0, #313cc4 100%);
-  background-image: -ms-linear-gradient(90deg, #5880fa 0, #313cc4 100%);
+  background-image: -moz-linear-gradient(90deg, #3e45fe 0, #3d5afe 100%);
+  background-image: -webkit-linear-gradient(90deg, #3e45fe 0, #3d5afe 100%);
+  background-image: -ms-linear-gradient(90deg, #3e45fe 0, #3d5afe 100%);
   float: left;
   margin-right: 50px
 }
@@ -791,9 +791,9 @@ a {
     margin-bottom: 40px
   }
   .overview-item--c4 {
-    background-image: -moz-linear-gradient(90deg, #5880fa 0, #313cc4 100%);
-    background-image: -webkit-linear-gradient(90deg, #5880fa 0, #313cc4 100%);
-    background-image: -ms-linear-gradient(90deg, #5880fa 0, #313cc4 100%);
+    background-image: -moz-linear-gradient(90deg, #3e45fe 0, #3d5afe 100%);
+    background-image: -webkit-linear-gradient(90deg, #3e45fe 0, #3d5afe 100%);
+    background-image: -ms-linear-gradient(90deg, #3e45fe 0, #3d5afe 100%);
     margin-right: 0px
   }
 }
@@ -952,7 +952,7 @@ a {
 }
 
 .dot--blue {
-  background: #5880fa
+  background: #3e45fe
 }
 
 .dot--red {
@@ -975,7 +975,10 @@ a {
 
 
 .table-earning thead th {
-  background: #5880FA;
+  background-image: -moz-linear-gradient(90deg, #3e45fe 0, #3d5afe 100%);
+  background-image: -webkit-linear-gradient(90deg, #3e45fe 0, #3d5afe 100%);
+  background-image: -ms-linear-gradient(90deg, #3e45fe 0, #3d5afe 100%);
+
   font-size: 16px;
   color: #fff;
   vertical-align: middle;
@@ -1183,5 +1186,5 @@ input, textarea {
 
 #clickablething:hover {
   cursor: pointer;
-  color: #5880FA;
+  color: #3e45fe;
 }

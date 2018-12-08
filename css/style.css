@@ -26,8 +26,8 @@ html {
 
 .alert-danger {
   color: #fff;
-  background-color: #313CC4;
-  border-color: #313CC4
+  background-color: #f12c53;
+  border-color: #f12c53
 }
 
 .info-section {
@@ -169,7 +169,7 @@ nav:before {
   display: block;
   width: 136px;
   height: 43px;
-  background: url("https://cubedpixels.net/projects/Arionum%20Wallet/images/aro-web-white.svg") no-repeat center center;
+  background: url("https://cubedpixels.net/projects/Arionum%20Wallet/images/aro-web-white-real.svg") no-repeat center center;
   background-size: contain;
   position: absolute;
   top: 50%;
@@ -732,14 +732,14 @@ a.btn-blue {
 /* CUBED IMAGE LOAD */
 
 .placeholder {
-  background-color: #696969;
+  background-image: -webkit-linear-gradient(90deg, #3e45fe 0, #3d5afe 100%);
   position: relative;
   overflow: hidden;
 }
 
 .placeholder img {
   position: absolute;
-  opacity: 0;
+  opacity: 0.7;
   top: 0;
   left: 0;
   width: 100%;
