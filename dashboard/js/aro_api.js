@@ -1,4 +1,3 @@
-﻿
 var publickey = localStorage.getItem( "rki_l_pb" );
 var privatekey = localStorage.getItem( "rki_l_pr" );
 if ( location.protocol != 'https:' ) {
@@ -65,7 +64,6 @@ function getArionumAlias( success ) {
 }
 
 function sendTransaction( dst, val, signature, public_key, ver, message, date, success ) {
-  console.log( "API REQUEST: " + 'send&dst=' + dst + "&val=" + val + "&signature=" + signature + "&public_key=" + public_key + "&ver=" + ver + "&message=" + message + "&date=" + date );
   getJSONP( 'send' + "&version=" + ver + "&dst=" + dst + "&val=" + val + "&signature=" + signature + "&public_key=" + public_key + "&message=" + message + "&date=" + date, function ( data ) {
     success && success( data );
   } );
@@ -85,7 +83,6 @@ function getLastTransactions( success, clear, preclear ) {
   } catch ( e ) {}
 
   getJSONP( 'getTransactions&public_key=' + publickey + "&account=" + address + "&limit=8", function ( data ) {
-    console.log( data );
     localStorage.setItem( 'lastTransactions', JSON.stringify( data ) );
     clear && clear();
     for ( var i = 0; i < data.data.length; i++ ) {
@@ -113,7 +110,6 @@ function getTransactionsFull( success, clear, download ) {
     return;
 
   getJSONP( 'getTransactions&public_key=' + publickey + "&account=" + address + "&limit=1000", function ( data ) {
-    console.log( data );
     localStorage.setItem( 'fullTransactions', JSON.stringify( data ) );
     clear && clear();
     for ( var i = 0; i < data.data.length; i++ ) {
@@ -126,7 +122,6 @@ function getTransactionsFull( success, clear, download ) {
 
 function getLatestTransaction( success ) {
   getJSONP( 'getTransactions&public_key=' + publickey + "&account=" + address + "&limit=1", function ( data ) {
-    console.log( data );
     success && success( data );
   } );
 }
@@ -157,10 +152,7 @@ function getAccounts() {
 
 function loginWithAccount( number ) {
   var accounts = getAccounts();
-  console.log( "INFO -> " + number );
-  console.log( "INFO -> " + number );
   var info = accounts[ number ];
-  console.log( "INFO -> " + info );
 
   //TODO -> SAVE CURRENT ACCOUNT
   accounts[ number ] = address + ":" + publickey + ":" + privatekey;
